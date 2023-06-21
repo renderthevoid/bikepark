@@ -1,0 +1,148 @@
+@import "../../scss/vars";
+
+.sort {
+    margin-top: 30px;
+    padding-bottom: 35px;
+    position: relative;
+    &_wrapper {
+        @include flex(space-between, center, wrap);
+    }
+}
+.title {
+    color: $subtitle;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+.container {
+}
+.type {
+    &_items {
+        background-color: $white;
+        border-radius: 15px;
+        border: 1px solid $tracing;
+        display: flex;
+        padding: 7px 6px;
+    }
+    &_item {
+        cursor: pointer;
+        padding: 13px 21px;
+        &_active {
+            cursor: pointer;
+            border-radius: 10px;
+            color: $white;
+            background-color: $el;
+            padding: 13px 21px;
+        }
+    }
+}
+
+.date {
+
+    &_activity {
+        @include flex(space-around, center, wrap);
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 13px;
+            z-index: 5;
+            background-color: black;
+            height: 2px;
+            right: 49%;
+            top: 70%;
+        }
+    }
+
+    &_start {
+    }
+
+    &_end {
+        margin-left: 40px;
+    }
+}
+.datepicker {
+    position: relative; 
+    input {
+        border: none;
+        border: 1px solid $tracing;
+        border-radius: 15px;
+        background-color: $white;
+        padding: 18px 20px;
+
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        z-index: 1;
+    }
+    &::after {
+        content: url("/src/assets/images/arrow.svg");
+        right: 20px;
+        bottom: 35%;
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    &_popup {
+    }
+}
+.input {
+}
+
+
+.delivery {
+}
+.delivery {
+    &_box {
+    }
+
+    &_picker {
+        background-color: $white;
+        padding: 18px 20px;
+        width: 260px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+
+        position: relative;
+        cursor: pointer;
+        border: 1px solid $tracing;
+        border-radius: 15px;
+        &::after {
+            content: url("/src/assets/images/arrow.svg");
+            right: 20px;
+            bottom: 35%;
+            position: absolute;
+            z-index: 2;
+        }
+    }
+
+    &_popup {
+        position: fixed;
+        background-color: $white;
+        width: 258px;
+        border: 1px solid $tracing;
+        border-radius: 15px;
+        z-index: 10;
+    }
+    &_items {
+        background-color: $white;
+        border-radius: 15px;
+    }
+    &_item {
+        padding: 20px 16px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        cursor: pointer;
+        border-radius: 15px;
+        &:hover {
+            background-color: $bg;
+        }
+    }
+}
+.title {
+}
+

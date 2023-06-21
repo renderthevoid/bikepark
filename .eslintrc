@@ -1,0 +1,12 @@
+{
+  "extends": ["react-app", "prettier"],
+  "rules": {
+    "jsx-quotes": [1, "prefer-double"],
+    "jsx-a11y/accessible-emoji": 0,
+    "jsx-a11y/iframe-has-title": 0,
+    "no-unused-vars": 1,
+    "import/no-unresolved": 0,
+    "no-const-assign": 1
+  },
+  "plugins": ["prettier"]
+}

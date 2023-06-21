@@ -1,0 +1,16 @@
+$text: #14233D;
+$tab: #737B98;
+$subtitle: #ABB1C5;
+$white: #ffffff;
+$tracing: #DDE3EB;
+$bg: #F2F4F7;
+$el:  #297FFF;
+$hover: #005EFF;
+
+
+@mixin flex($jc, $ai, $wr) {
+    display: flex;
+    flex-wrap: $wr;
+    justify-content: $jc;
+    align-items: $ai;
+}

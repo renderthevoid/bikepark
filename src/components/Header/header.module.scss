@@ -1,0 +1,75 @@
+@import "../../scss/vars";
+.header {
+    padding: 20px 0;
+}
+.wrapper {
+    @include flex(space-between, center, nowrap);
+    padding: 0 40px;
+}
+.logo{
+}
+.menu {
+}
+.menu {
+
+    &_items {
+        @include flex(space-between, center, nowrap);
+    }
+
+    &_item {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        cursor: pointer;
+        &:hover {
+            color: $hover;
+        }
+    }
+    &_item + &_item {
+        margin-left: 20px;
+    }
+}
+.items {
+    @include flex(space-between, center, nowrap);
+}
+.phone {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: right;
+    color: $el;
+}
+.account_logo {
+    margin-left: 20px;
+    svg {
+        cursor: pointer;
+        transition: .4s linear;
+        &:hover {
+            fill: $el;
+            path, circle {
+                fill: $hover;
+                stroke: $white;
+            }
+        }
+    }
+}
+.btn{
+    cursor: pointer;
+    padding: 12px 31px;
+    border-radius: 10px;
+    border: none;
+    background-color: $el;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    transition: .3s linear;
+    &:hover {
+        background-color: $hover;
+    }
+
+}
+

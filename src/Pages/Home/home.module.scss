@@ -1,0 +1,68 @@
+@import "../../scss/vars";
+.home {
+    margin-top: 40px;
+    position: relative;
+    &::after {
+        content: url("../../assets/images/Intersect.svg");
+        width: 20px;
+        height: 20px;
+        bottom: -4%;
+        position: absolute;
+        left: 5%;
+    }
+}
+.wrapper {
+    background-color: $bg;
+    border-radius: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+.hero {
+    @include flex(start, center, wrap);
+}
+.title {
+    max-width: 549px;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 120%;
+    margin-left: 40px;
+}
+.gifts {
+    @include flex(center, center, nowrap);
+
+}
+.gift {
+    &_wrapper {
+    }
+    &_img {
+        width: 134px;
+        height: 111px;
+    }
+    &_item {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 5px;
+    }
+    &_free {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 22px;
+        color: $el;
+    }
+}
+.text_block {
+    position: absolute;
+    left: -45px;
+    bottom: -60px;
+}
+.bg {
+    width: 220px;
+    height: 207px;
+    z-index: -1;
+    margin-right: -13px;
+}
+.helmet {
+    background-color: $el;
+}
+

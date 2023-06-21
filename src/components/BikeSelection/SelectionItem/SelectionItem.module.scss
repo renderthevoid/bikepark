@@ -1,0 +1,102 @@
+@import "../../../scss/vars";
+.selection {
+    &_image {
+        position: absolute;
+        top: -68%;
+    }
+    &_wrapper {
+        background-color: $white;
+        border-radius: 15px;
+        padding: 50px 24px 27px;
+    }
+    &_item {
+        max-width: 260px;
+        position: relative;
+    }
+
+    &_title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 13px;
+    }
+
+    &_options {
+        @include flex(space-between, center, wrap);
+    }
+
+    &_price {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 22px;
+        color: $el;
+    }
+
+    &_info {
+        margin-right: 10px;
+        position: relative;
+    }
+    &_actions {
+        @include flex(start, center, nowrap);
+    }
+}
+.icon {
+    padding: 12px 19px;
+    border: 1px solid #DDE3EB;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s linear;
+    &:active {
+        background-color: $hover;
+    }
+}
+.info {
+    &_text {
+        padding: 16px 12px 16px;
+        border: 1px solid $tracing;
+        border-radius: 15px;
+        background-color: $bg;
+        width: 260px;
+        max-height: 147px;
+        white-space: wrap;
+        transition:  .3s linear;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        color: $subtitle;
+        position: absolute;
+        top: 70px;
+        left: -130px;
+    }
+    &_text::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -8%;
+        right: 37%;
+        background-color: $bg;
+        border: 1px solid $tracing;
+        border-right: none;
+        border-bottom: none;
+        border-radius: 2px;
+        transform: rotate(45deg);
+    }
+}
+.add {
+    cursor: pointer;
+    padding: 12px 17px;
+    border: 1px solid #DDE3EB;
+    border-radius: 10px;
+    transition: .3s linear;
+}
+.add_active {
+    cursor: pointer;
+    background-color: $el;
+    padding: 12px 17px;
+    border: 1px solid #DDE3EB;
+    border-radius: 10px;
+    transition: .3s linear;
+}
+
+

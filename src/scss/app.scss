@@ -1,0 +1,28 @@
+@import "./vars";
+@import "./libs/normalize";
+body {
+    background-color: #ffffff;
+}
+.content {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+.container {
+    padding: 0 40px;
+}
+.tool_wrapper {
+    height: 207px;
+    position: relative;
+}
+.tool_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+.helmet {
+    
+}
