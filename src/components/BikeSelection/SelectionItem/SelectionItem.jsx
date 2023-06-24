@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './SelectionItem.module.scss'
 import bycicle from '../../../assets/images/bycicle.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { addOption, deleteOption } from '../../../redux/reducers/bikeReducer'
 
-const SelectionItem = ({ id, title, price, info }) => {
+const SelectionItem = ({ id, title, price, type, info }) => {
   const [added, setAdded] = useState(false)
+  // useEffect(() => {
+  //   console.log(items)
+  // }, [added])
+
+  const dispatch = useDispatch()
+  const options = useSelector((state) => state.selection.options)
+
   const [visible, setVisible] = useState(false)
   return (
     <div className={style.selection_item}>
@@ -41,40 +50,49 @@ const SelectionItem = ({ id, title, price, info }) => {
             </div>
             <div
               className={added ? style.add_active : style.add}
-              onClick={() => setAdded(!added)}
+              onClick={() => {
+                setAdded(!added)
+                !options.find((i) => i === type)
+                  ? dispatch(addOption(type))
+                  : dispatch(deleteOption(type))
+              }}
             >
               {added ? (
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 10 7"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 3L3.99951 6L8.99951 1"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <div>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 10 7"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 3L3.99951 6L8.99951 1"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
               ) : (
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 6H11M6 1V11"
-                    stroke="#297FFF"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <div>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 6H11M6 1V11"
+                      stroke="#297FFF"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
               )}
             </div>
           </div>

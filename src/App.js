@@ -6,22 +6,21 @@ import Home from './Pages/Home/Home'
 
 const App = () => {
   const [items, setItems] = useState([])
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://api.mockaroo.com/api/58168ab0?count=20&key=013fb6a0`, {
-  //       // headers: { 'X-Api-Key': 'c4ZZ4xL1DkO5PNlDCojQNQ==fVwiotuuxW7XCxz3' },
-  //     })
-  //     .then((res) => {
-  //       console.log(res.data)
-  //       setItems(res.data)
-  //     })
-  // }, [])
+  const brandName = "GT"
+  useEffect(() => {
+    axios
+      .get(`https://6495c034b08e17c91792a14c.mockapi.io/items?page=1&limit=10&bicycle_type=Mountain|City|Carbon`)
+      .then((res) => {
+        console.log(res.data)
+        setItems(res.data)
+      })
+  }, [])
 
   return (
     <div className="content">
       <Header />
       {items.map((item) => (
-        <div key={item.id}>{item.brand}</div>
+        <div key={item.id}>{item.available}</div>
       ))}
       <Home />
     </div>
